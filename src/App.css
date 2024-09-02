@@ -15,10 +15,11 @@
   }
 }
 
-.card {
+.password-generator {
+  margin: 0 auto;
   padding: 10px;
   width: 540px;
-  background-color: #24232C;
+  background-color: #24232C !important;
   height: 528px;
 }
 
@@ -30,17 +31,65 @@
 }
 
 .password-wrap {
-  padding: 10px;
   width: 540px;
   margin: 0 auto;
-  display: block;
-  background-color: #24232C;
+  background-color: #24232C !important
+}
+
+ul {
+  border-color: #24232C !important;
+}
+
+.password-wrap li {
+  background-color: #24232C !important;
+  border: #24232C;
 }
 
 .icon {
   float: right;
 }
 
-.generator {
-  margin: 20px;
+.pass-gen-grey {
+  color: grey;
+}
+
+label {
+  color: #E6E5EA;
+}
+
+.range-input {
+  width: 100%;
+}
+
+.character-length {
+  display: block;
+}
+
+.character-length label {
+  float: left;
+}
+
+.character-length .range {
+  float: right;
+}
+
+.btn-gen {
+  width: 100%;
+}
+
+.strength-wrap {
+  display: block;
+}
+
+.strength-card {
+  background-color: #18171F !important;
+  border: #18171F;
+}
+
+.strength-label {
+  float: left;
+}
+
+.strength {
+  float: right;
 }
