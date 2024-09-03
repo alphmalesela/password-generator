@@ -108,72 +108,114 @@ function App() {
 
   return (
     <>
-      <p class="pass-gen-grey">Password Generator</p>
-      <div class="card password-wrap">
-        <div class="card-body">
+      <p className="pass-gen-grey">Password Generator</p>
+      <div className="card password-wrap">
+        <div className="card-body">
           <span id='password'>{password}</span>
-          <span class="icon" onClick={() => copyPasswordToClipboard()}>copy</span>
+          <span className="icon" onClick={() => copyPasswordToClipboard()}>copy</span>
         </div>
       </div>
-      <ul class="list-group password-wrap">
-        <li class="list-group-item character-length">
+      <ul className="list-group password-wrap">
+        <li className="list-group-item character-length">
           <label for="uppercase">Character Length</label>
-          <label class="range">{range}</label>
+          <label className="range">{range}</label>
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <input
-            class="range-input"
+            className="range-input"
             defaultValue={0}
             onChange={onRangeChange} type="range" id="length" name="length" min="0" max="20" />
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <input
-            class="form-check-input me-1"
+            className="form-check-input me-4 float-start"
             onChange={onToggleUppercase}
             type="checkbox"
             id="uppercase"
             name="uppercase" />
-          <label class="form-check-label" for="uppercase">Include Uppercase Letters</label>
+          <label className="form-check-label float-start" for="uppercase">Include Uppercase Letters</label>
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <input
-            class="form-check-input me-1"
+            className="form-check-input me-4 float-start"
             onChange={onToggleLowercase}
             type="checkbox"
             id="lowercase"
             name="lowercase" />
-          <label class="form-check-label" for="lowercase">Include Lowercase Letters</label>
+          <label className="form-check-label float-start" for="lowercase">Include Lowercase Letters</label>
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <input
-            class="form-check-input me-1"
+            className="form-check-input me-4 float-start"
             onChange={onToggleNumbers}
             type="checkbox"
             id="numbers"
             name="numbers" />
-          <label class="form-check-label" for="numbers">Include Numbers</label>
+          <label className="form-check-label float-start" for="numbers">Include Numbers</label>
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <input
-            class="form-check-input me-1"
+            className="form-check-input me-4 float-start"
             onChange={onToggleSymbols}
             type="checkbox"
             id="symbols"
             name="symbols" />
-          <label class="form-check-label" for="symbols">Include Symbols</label>
+          <label className="form-check-label float-start" for="symbols">Include Symbols</label>
         </li>
-        <li class="list-group-item">
-          <div class="card strength-card">
-            <div class="card-body strength-wrap">
-              <span class="strength-label">STRENGTH</span>
-              <span class="strength">{strengthLabel} {strength}</span>
+        <li className="list-group-item">
+          <div className="card strength-card">
+            <div className="card-body strength-wrap">
+              <span className="strength-heading">STRENGTH</span>
+              <span className="strength">
+                <span className="label">{strengthLabel}</span>
+                {(strength === 0 && password === "P4$5W0rD!") &&
+                  <>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                  </>
+                }
+                {(strength === 0 && password !== "P4$5W0rD!") &&
+                  <>
+                    <button type="button" className="btn btn-outline-danger btn-0"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                  </>
+                }
+                {(strength === 1) &&
+                  <>
+                    <button type="button" className="btn btn-outline-warning btn-1"></button>
+                    <button type="button" className="btn btn-outline-warning btn-1"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                  </>
+                }
+                {(strength === 2) &&
+                  <>
+                    <button type="button" className="btn btn-outline-warning btn-2"></button>
+                    <button type="button" className="btn btn-outline-warning btn-2"></button>
+                    <button type="button" className="btn btn-outline-warning btn-2"></button>
+                    <button type="button" className="btn btn-outline-light btn-placeholder"></button>
+                  </>
+                }
+                {(strength === 3) &&
+                  <>
+                    <button type="button" className="btn btn-outline-success btn-3"></button>
+                    <button type="button" className="btn btn-outline-success btn-3"></button>
+                    <button type="button" className="btn btn-outline-success btn-3"></button>
+                    <button type="button" className="btn btn-outline-success btn-3"></button>
+                  </>
+                }
+              </span>
             </div>
           </div>
         </li>
-        <li class="list-group-item">
+        <li className="list-group-item">
           <button
             type='button'
-            class="btn btn-success btn-gen"
+            className="btn btn-success btn-gen"
             onClick={() => generatePassword()}>
             GENERATE
           </button>
