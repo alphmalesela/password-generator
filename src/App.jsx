@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import IconCopy from './assets/images/icon-copy.svg'
+import IconArrowRight from './assets/images/icon-arrow-right.svg'
 
 function App() {
 
@@ -111,8 +113,10 @@ function App() {
       <p className="pass-gen-grey">Password Generator</p>
       <div className="card password-wrap">
         <div className="card-body">
-          <span id='password'>{password}</span>
-          <span className="icon" onClick={() => copyPasswordToClipboard()}>copy</span>
+          <span className={password === 'P4$5W0rD!' ? 'password-placeholder' : 'password'}>{password}</span>
+          <span className="icon" onClick={() => copyPasswordToClipboard()}>
+            <img src={IconCopy} alt="copy" />
+          </span>
         </div>
       </div>
       <ul className="list-group password-wrap">
@@ -218,6 +222,7 @@ function App() {
             className="btn btn-success btn-gen"
             onClick={() => generatePassword()}>
             GENERATE
+            <span className='m-2'><img src={IconArrowRight} alt="" /></span>
           </button>
         </li>
       </ul>

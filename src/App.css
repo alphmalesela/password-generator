@@ -12,10 +12,17 @@
   height: 528px;
 }
 
-#password {
+.password {
   font-weight: bold;
   font-size: large;
-  color: white;
+  color: #E6E5EA;
+  float: left;
+}
+
+.password-placeholder {
+  font-weight: bold;
+  font-size: large;
+  color: #817D92;
   float: left;
 }
 
@@ -39,7 +46,7 @@ ul {
 }
 
 .pass-gen-grey {
-  color: grey;
+  color: #817D92;
 }
 
 label {
@@ -88,7 +95,7 @@ input[type="checkbox"]:checked {
 
 .strength-heading {
   float: left;
-  color: grey;
+  color: #817D92;
 }
 
 .strength {
@@ -102,28 +109,28 @@ input[type="checkbox"]:checked {
 }
 
 .btn-0 {
-  border-color: red;
+  border-color: #F64A4A !important;
   height: 1.5rem;
   width: 0.2rem;
   margin-left: 0.5rem;
 }
 
 .btn-1 {
-  border-color: orange;
+  border-color: #FB7C58 !important;
   height: 1.5rem;
   width: 0.2rem;
   margin-left: 0.5rem;
 }
 
 .btn-2 {
-  border-color: yellow;
+  border-color: #F8CD65 !important;
   height: 1.5rem;
   width: 0.2rem;
   margin-left: 0.5rem;
 }
 
 .btn-3 {
-  border-color: green;
+  border-color: #A4FFAF !important;
   height: 1.5rem;
   width: 0.2rem;
   margin-left: 0.5rem;
@@ -134,4 +141,8 @@ input[type="checkbox"]:checked {
   height: 1.5rem;
   width: 0.2rem;
   margin-left: 0.5rem;
+}
+
+.iconcolor {
+  background-color: #A4FFAF !important;
 }
